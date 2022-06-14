@@ -45,13 +45,18 @@ namespace csharp
                 }
                 else
                 {
-                    if (Items[i].Name != Sulfuras && Items[i].Quality > 0)
-                    {
-                        Items[i].Quality = Items[i].Quality - 1;
-                    }
+                    
                 }
 
-                if (Items[i].Name != Sulfuras)
+                if (Items[i].Name != AgedBire 
+                    && Items[i].Name != Backstage
+                    && Items[i].Name != Sulfuras
+                    && Items[i].Quality > 0) // Decrease Quantity for normal case
+                {
+                    Items[i].Quality = Items[i].Quality - 1;
+                }
+
+                if (Items[i].Name != Sulfuras) // Decrease SellIn for anytying except Sulfuras
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
                 }
