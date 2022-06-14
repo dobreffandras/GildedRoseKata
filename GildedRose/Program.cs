@@ -31,13 +31,8 @@ for (int i = 0; i < items.Count; i++)
 {
     Item originalItem = originalItems[i];
     Item? updatedItem = items[i];
-    Console.Write("new object[]{ ");
-    Console.Write("new Item{ Name=\"" + originalItem.Name + "\", ");
-    Console.Write("SellIn=" + originalItem.SellIn + ", ");
-    Console.Write("Quality=" + originalItem.Quality + "},");
-    Console.Write("new Item{ Name=\"" + updatedItem.Name + "\", ");
-    Console.Write("SellIn=" + updatedItem.SellIn + ", ");
-    Console.Write("Quality=" + updatedItem.Quality + "}");
-    Console.Write("},");
-    Console.WriteLine();
+    Console.WriteLine($"new object[] {{ " +
+        $"new Item{{ Name=\"{originalItem.Name}\", SellIn={originalItem.SellIn}, Quality={originalItem.Quality} }}," +
+        $"new Item{{ Name=\"{updatedItem.Name}\", SellIn={updatedItem.SellIn}, Quality={updatedItem.Quality} }}" +
+        $"}},");
 }
