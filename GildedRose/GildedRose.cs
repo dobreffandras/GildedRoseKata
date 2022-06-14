@@ -87,14 +87,6 @@ namespace csharp
                     }
                 }
 
-                if(Items[i].Name == Backstage)
-                {
-                    if (Items[i].SellIn < 0)
-                    {
-                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
-                    }
-                }
-                    
                 if(Items[i].Name == AgedBire)
                 {
                     if (Items[i].SellIn < 0)
@@ -105,7 +97,15 @@ namespace csharp
                         }
                     }
                 }
-                
+
+                if (Items[i].Name == Backstage)
+                {
+                    if (Items[i].SellIn < 0)
+                    {
+                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                    }
+                }
+
             }
         }
     }
