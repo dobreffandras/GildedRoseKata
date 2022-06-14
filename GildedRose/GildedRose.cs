@@ -67,10 +67,12 @@ namespace csharp
 
                 if (Items[i].Name != AgedBire
                     && Items[i].Name != Backstage
-                    && Items[i].Name != Sulfuras
-                    && Items[i].Quality > 0) // Decrease Quantity for normal case
+                    && Items[i].Name != Sulfuras) // Decrease Quantity for normal case
                 {
-                    Items[i].Quality = Items[i].Quality - 1;
+                    if(Items[i].Quality > 0)
+                    {
+                        Items[i].Quality = Items[i].Quality - 1;
+                    }
                 }
 
                 if (Items[i].Name != AgedBire
