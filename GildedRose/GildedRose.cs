@@ -50,14 +50,6 @@ namespace csharp
                     
                 }
 
-                if (Items[i].Name != AgedBire 
-                    && Items[i].Name != Backstage
-                    && Items[i].Name != Sulfuras
-                    && Items[i].Quality > 0) // Decrease Quantity for normal case
-                {
-                    Items[i].Quality = Items[i].Quality - 1;
-                }
-
                 if (Items[i].Name == AgedBire) // Decrease SellIn for AgedBrie
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
@@ -68,6 +60,13 @@ namespace csharp
                     Items[i].SellIn = Items[i].SellIn - 1;
                 }
 
+                if (Items[i].Name != AgedBire
+                    && Items[i].Name != Backstage
+                    && Items[i].Name != Sulfuras
+                    && Items[i].Quality > 0) // Decrease Quantity for normal case
+                {
+                    Items[i].Quality = Items[i].Quality - 1;
+                }
 
                 if (Items[i].Name != AgedBire
                     && Items[i].Name != Backstage
