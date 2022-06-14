@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GildedRose.Strategies;
+using System.Collections.Generic;
 
 namespace GildedRose
 {

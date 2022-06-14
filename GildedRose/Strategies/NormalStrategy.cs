@@ -1,5 +1,5 @@
 ﻿using System;
-namespace GildedRose
+namespace GildedRose.Strategies
 {
     internal class NormalStrategy : IQuantityUpdateStrategy
     {

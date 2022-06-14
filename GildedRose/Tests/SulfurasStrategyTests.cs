@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace GildedRose
+namespace GildedRose.Tests
 {
     public class SulfurasStrategyTests : GildedRoseTest
     {

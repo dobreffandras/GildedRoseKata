@@ -1,4 +1,4 @@
-﻿namespace GildedRose
+﻿namespace GildedRose.Strategies
 {
     internal class SulfurasStrategy : IQuantityUpdateStrategy
     {

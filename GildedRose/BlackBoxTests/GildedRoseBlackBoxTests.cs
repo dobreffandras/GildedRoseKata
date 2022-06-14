@@ -1,12 +1,11 @@
-﻿using GildedRose;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace GildedRose
+namespace GildedRose.BlackBoxTests
 {
     public class GildedRoseBlackBoxTests
     {
@@ -14,7 +13,7 @@ namespace GildedRose
         [MemberData(nameof(TestCases))]
         public void BlackBoxTests(Item original, Item expected)
         {
-            var g = new GildedRose.GildedRose(new List<Item> { original });
+            var g = new GildedRose(new List<Item> { original });
             g.UpdateQuality();
             var updated = g.Items[0];
             Assert.Equal(expected.Name, updated.Name);
@@ -24,7 +23,7 @@ namespace GildedRose
 
         public static IEnumerable<object[]> TestCases()
         {
-            return new object[][] 
+            return new object[][]
             {
                 new object[] { new Item{ Name="Anyname", SellIn=-1, Quality=-1},new Item { Name = "Anyname", SellIn = -2, Quality = -1 }},
                 new object[] { new Item { Name = "Anyname", SellIn = -1, Quality = 0 }, new Item { Name = "Anyname", SellIn = -2, Quality = 0 } },

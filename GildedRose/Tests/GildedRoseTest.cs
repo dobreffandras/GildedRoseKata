@@ -1,4 +1,4 @@
-﻿namespace GildedRose
+﻿namespace GildedRose.Tests
 {
     public class GildedRoseTest
     {

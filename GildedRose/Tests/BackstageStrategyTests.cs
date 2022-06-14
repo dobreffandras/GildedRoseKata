@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace GildedRose
+namespace GildedRose.Tests
 {
     public class BackstageStrategyTests : GildedRoseTest
     {
@@ -23,7 +23,7 @@ namespace GildedRose
             RunGildedRoseUpdateQuantityForItem(item);
             Assert.Equal(2, item.Quality);
         }
-        
+
         [Fact]
         public void When_SellInGreaterBetweenSixAndEleven_Then_IncreaseQuantityBy2()
         {
@@ -31,7 +31,7 @@ namespace GildedRose
             RunGildedRoseUpdateQuantityForItem(item);
             Assert.Equal(3, item.Quality);
         }
-        
+
         [Fact]
         public void When_SellInLessThanSix_Then_IncreaseQuantityBy3()
         {

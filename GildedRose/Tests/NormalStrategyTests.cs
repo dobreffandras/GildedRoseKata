@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace GildedRose
+namespace GildedRose.Tests
 {
     public class NormalStrategyTests : GildedRoseTest
     {
