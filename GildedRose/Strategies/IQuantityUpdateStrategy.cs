@@ -1,7 +1,7 @@
 ﻿namespace GildedRose.Strategies
 {
-    internal interface IQuantityUpdateStrategy
+    internal interface IQualityUpdateStrategy
     {
-        void UpdateQuantity(Item item);
+        void UpdateQuality(Item item);
     }
 }

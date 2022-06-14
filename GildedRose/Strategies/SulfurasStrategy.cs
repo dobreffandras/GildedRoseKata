@@ -1,8 +1,8 @@
 ﻿namespace GildedRose.Strategies
 {
-    internal class SulfurasStrategy : IQuantityUpdateStrategy
+    internal class SulfurasStrategy : IQualityUpdateStrategy
     {
-        public void UpdateQuantity(Item item)
+        public void UpdateQuality(Item item)
         {
         }
     }

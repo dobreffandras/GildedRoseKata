@@ -1,24 +1,24 @@
 ﻿namespace GildedRose.Strategies
 {
-    internal class AgedBrieStrategy : IQuantityUpdateStrategy
+    internal class AgedBrieStrategy : IQualityUpdateStrategy
     {
-        private const int QuantityCap = 50;
+        private const int QualityCap = 50;
 
-        public void UpdateQuantity(Item item)
+        public void UpdateQuality(Item item)
         {
-            IncreaseQuantitiyByOneUpToCap(item);
+            IncreaseQualityByOneUpToCap(item);
 
             item.SellIn--;
 
             if (item.SellIn < 0)
             {
-                IncreaseQuantitiyByOneUpToCap(item);
+                IncreaseQualityByOneUpToCap(item);
             }
         }
 
-        private static void IncreaseQuantitiyByOneUpToCap(Item item)
+        private static void IncreaseQualityByOneUpToCap(Item item)
         {
-            if (item.Quality < QuantityCap)
+            if (item.Quality < QualityCap)
             {
                 item.Quality++;
             }

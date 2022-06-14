@@ -19,7 +19,7 @@ namespace GildedRose
         {
             foreach (Item item in Items)
             {
-                IQuantityUpdateStrategy strategy = item.Name switch
+                IQualityUpdateStrategy strategy = item.Name switch
                 {
                     AgedBire => new AgedBrieStrategy(),
                     Backstage => new BackstageStrategy(),
@@ -27,7 +27,7 @@ namespace GildedRose
                     _ => new NormalStrategy()
                 };
 
-                strategy.UpdateQuantity(item);
+                strategy.UpdateQuality(item);
             }
         }
     }

@@ -1,21 +1,21 @@
 ﻿using System;
 namespace GildedRose.Strategies
 {
-    internal class NormalStrategy : IQuantityUpdateStrategy
+    internal class NormalStrategy : IQualityUpdateStrategy
     {
-        public void UpdateQuantity(Item item)
+        public void UpdateQuality(Item item)
         {
-            DecreaseQuantityByOne(item);
+            DecreaseQualityByOne(item);
 
             item.SellIn--;
 
             if (item.SellIn < 0)
             {
-                DecreaseQuantityByOne(item);
+                DecreaseQualityByOne(item);
             }
         }
 
-        private void DecreaseQuantityByOne(Item item)
+        private void DecreaseQualityByOne(Item item)
         {
             if (item.Quality > 0)
             {

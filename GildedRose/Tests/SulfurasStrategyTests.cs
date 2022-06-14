@@ -18,12 +18,12 @@ namespace GildedRose.Tests
         [InlineData(1, 49)]
         [InlineData(11, 49)]
         [InlineData(6, 49)]
-        public void ItemNotChanged(int sellin, int quantity)
+        public void ItemNotChanged(int sellin, int quality)
         {
-            var item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellin, Quality = quantity };
-            RunGildedRoseUpdateQuantityForItem(item);
+            var item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellin, Quality = quality };
+            RunGildedRoseUpdateQualityForItem(item);
             Assert.Equal(sellin, item.SellIn);
-            Assert.Equal(quantity, item.Quality);
+            Assert.Equal(quality, item.Quality);
         }
     }
 }

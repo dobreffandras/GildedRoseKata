@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace GildedRose.Strategies
 {
-    internal class BackstageStrategy : IQuantityUpdateStrategy
+    internal class BackstageStrategy : IQualityUpdateStrategy
     {
-        private const int QuantityCap = 50;
+        private const int QualityCap = 50;
 
-        public void UpdateQuantity(Item item)
+        public void UpdateQuality(Item item)
         {
-            IncreaseQuantitiyByOneUpToCap(item);
+            IncreaseQualityByOneUpToCap(item);
 
             if (item.SellIn < 11)
             {
-                IncreaseQuantitiyByOneUpToCap(item);
+                IncreaseQualityByOneUpToCap(item);
             }
 
             if (item.SellIn < 6)
             {
-                IncreaseQuantitiyByOneUpToCap(item);
+                IncreaseQualityByOneUpToCap(item);
             }
 
             item.SellIn--;
@@ -32,9 +32,9 @@ namespace GildedRose.Strategies
             }
         }
 
-        private static void IncreaseQuantitiyByOneUpToCap(Item item)
+        private static void IncreaseQualityByOneUpToCap(Item item)
         {
-            if (item.Quality < QuantityCap)
+            if (item.Quality < QualityCap)
             {
                 item.Quality++;
             }
