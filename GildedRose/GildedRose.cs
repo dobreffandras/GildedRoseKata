@@ -19,70 +19,22 @@ namespace csharp
             {
                 if (item.Name == AgedBire)
                 {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality = item.Quality + 1;
-                    }
-
-                    item.SellIn = item.SellIn - 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
-                    }
+                    var strategy = new AgedBrieStrategy();
+                    strategy.UpdateQuantity(item);
                 }
 
                 if (item.Name == Backstage)
                 {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality = item.Quality + 1;
-
-                        if (item.SellIn < 11)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-
-                        if (item.SellIn < 6)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-                    }
-
-                    item.SellIn = item.SellIn - 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality = 0;
-                    }
-
+                    var strategy = new BackstageStrategy();
+                    strategy.UpdateQuantity(item);
                 }
-
 
                 if (item.Name != AgedBire
                     && item.Name != Backstage
                     && item.Name != Sulfuras) 
                 {
-                    if (item.Quality > 0)
-                    {
-                        item.Quality = item.Quality - 1;
-                    }
-
-                    item.SellIn = item.SellIn - 1; // Decrease SellIn for normal case
-
-                    if (item.SellIn < 0 && item.Quality > 0)
-                    {
-                        item.Quality = item.Quality - 1; // Decrease Quantity for normal case if sellIn is below zero
-                    }
+                    var strategy = new NormalStrategy();
+                    strategy.UpdateQuantity(item);
                 }
             }
         }
