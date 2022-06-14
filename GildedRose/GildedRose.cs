@@ -15,73 +15,73 @@ namespace csharp
 
         public void UpdateQuality()
         {
-            for (var i = 0; i < Items.Count; i++)
+            foreach (Item item in Items)
             {
-                if (Items[i].Name == AgedBire)
+                if (item.Name == AgedBire)
                 {
-                    if (Items[i].Quality < 50)
+                    if (item.Quality < 50)
                     {
-                        Items[i].Quality = Items[i].Quality + 1;
+                        item.Quality = item.Quality + 1;
                     }
 
-                    Items[i].SellIn = Items[i].SellIn - 1;
+                    item.SellIn = item.SellIn - 1;
 
-                    if (Items[i].SellIn < 0)
+                    if (item.SellIn < 0)
                     {
-                        if (Items[i].Quality < 50)
+                        if (item.Quality < 50)
                         {
-                            Items[i].Quality = Items[i].Quality + 1;
+                            item.Quality = item.Quality + 1;
                         }
                     }
                 }
 
-                if (Items[i].Name == Backstage)
+                if (item.Name == Backstage)
                 {
-                    if (Items[i].Quality < 50)
+                    if (item.Quality < 50)
                     {
-                        Items[i].Quality = Items[i].Quality + 1;
+                        item.Quality = item.Quality + 1;
 
-                        if (Items[i].SellIn < 11)
+                        if (item.SellIn < 11)
                         {
-                            if (Items[i].Quality < 50)
+                            if (item.Quality < 50)
                             {
-                                Items[i].Quality = Items[i].Quality + 1;
+                                item.Quality = item.Quality + 1;
                             }
                         }
 
-                        if (Items[i].SellIn < 6)
+                        if (item.SellIn < 6)
                         {
-                            if (Items[i].Quality < 50)
+                            if (item.Quality < 50)
                             {
-                                Items[i].Quality = Items[i].Quality + 1;
+                                item.Quality = item.Quality + 1;
                             }
                         }
                     }
 
-                    Items[i].SellIn = Items[i].SellIn - 1;
+                    item.SellIn = item.SellIn - 1;
 
-                    if (Items[i].SellIn < 0)
+                    if (item.SellIn < 0)
                     {
-                        Items[i].Quality = 0;
+                        item.Quality = 0;
                     }
 
                 }
 
 
-                if (Items[i].Name != AgedBire
-                    && Items[i].Name != Backstage
-                    && Items[i].Name != Sulfuras) 
+                if (item.Name != AgedBire
+                    && item.Name != Backstage
+                    && item.Name != Sulfuras) 
                 {
-                    if (Items[i].Quality > 0)
+                    if (item.Quality > 0)
                     {
-                        Items[i].Quality = Items[i].Quality - 1;
+                        item.Quality = item.Quality - 1;
                     }
 
-                    Items[i].SellIn = Items[i].SellIn - 1; // Decrease SellIn for normal case
+                    item.SellIn = item.SellIn - 1; // Decrease SellIn for normal case
 
-                    if (Items[i].SellIn < 0 && Items[i].Quality > 0)
+                    if (item.SellIn < 0 && item.Quality > 0)
                     {
-                        Items[i].Quality = Items[i].Quality - 1; // Decrease Quantity for normal case if sellIn is below zero
+                        item.Quality = item.Quality - 1; // Decrease Quantity for normal case if sellIn is below zero
                     }
                 }
             }
