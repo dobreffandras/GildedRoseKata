@@ -7,7 +7,6 @@ namespace csharp
         private const string AgedBire = "Aged Brie";
         private const string Backstage = "Backstage passes to a TAFKAL80ETC concert";
         private const string Sulfuras = "Sulfuras, Hand of Ragnaros";
-
         internal IList<Item> Items;
         public GildedRose(IList<Item> Items)
         {
@@ -18,17 +17,7 @@ namespace csharp
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Name != AgedBire && Items[i].Name != Backstage)
-                {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != Sulfuras)
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
-                }
-                else
+                if (Items[i].Name == AgedBire || Items[i].Name == Backstage)
                 {
                     if (Items[i].Quality < 50)
                     {
@@ -52,6 +41,13 @@ namespace csharp
                                 }
                             }
                         }
+                    }
+                }
+                else
+                {
+                    if (Items[i].Name != Sulfuras && Items[i].Quality > 0)
+                    {
+                        Items[i].Quality = Items[i].Quality - 1;
                     }
                 }
 
