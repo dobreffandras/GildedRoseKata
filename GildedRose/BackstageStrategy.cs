@@ -8,27 +8,20 @@ namespace csharp
 {
     internal class BackstageStrategy : IQuantityUpdateStrategy
     {
+        private const int QuantityCap = 50;
+
         public void UpdateQuantity(Item item)
         {
-            if (item.Quality < 50)
-            {
-                item.Quality++;
-            }
+            IncreaseQuantitiyByOneUpToCap(item);
 
             if (item.SellIn < 11)
             {
-                if (item.Quality < 50)
-                {
-                    item.Quality++;
-                }
+                IncreaseQuantitiyByOneUpToCap(item);
             }
 
             if (item.SellIn < 6)
             {
-                if (item.Quality < 50)
-                {
-                    item.Quality++;
-                }
+                IncreaseQuantitiyByOneUpToCap(item);
             }
 
             item.SellIn--;
@@ -36,6 +29,14 @@ namespace csharp
             if (item.SellIn < 0)
             {
                 item.Quality = 0;
+            }
+        }
+
+        private static void IncreaseQuantitiyByOneUpToCap(Item item)
+        {
+            if (item.Quality < QuantityCap)
+            {
+                item.Quality++;
             }
         }
     }
