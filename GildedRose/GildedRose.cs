@@ -29,6 +29,12 @@ namespace csharp
                     strategy.UpdateQuantity(item);
                 }
 
+                if(item.Name == Sulfuras)
+                {
+                    var strategy = new SulfurasStrategy();
+                    strategy.UpdateQuantity(item);
+                }
+
                 if (item.Name != AgedBire
                     && item.Name != Backstage
                     && item.Name != Sulfuras) 
