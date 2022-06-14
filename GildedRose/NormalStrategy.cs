@@ -5,14 +5,19 @@ namespace csharp
     {
         public void UpdateQuantity(Item item)
         {
-            if (item.Quality > 0)
-            {
-                item.Quality--;
-            }
+            DecreaseQuantityByOne(item);
 
             item.SellIn--;
 
-            if (item.SellIn < 0 && item.Quality > 0)
+            if (item.SellIn < 0)
+            {
+                DecreaseQuantityByOne(item);
+            }
+        }
+
+        private void DecreaseQuantityByOne(Item item)
+        {
+            if (item.Quality > 0)
             {
                 item.Quality--;
             }
