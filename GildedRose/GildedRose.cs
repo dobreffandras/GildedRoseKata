@@ -74,12 +74,9 @@ namespace csharp
                         }
                     }
 
-                    if (Items[i].Name != AgedBire)
+                    if(Items[i].Name == Backstage)
                     {
-                        if(Items[i].Name == Backstage)
-                        {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
-                        }
+                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
                     }
                     
                     if(Items[i].Name == AgedBire)
