@@ -58,7 +58,20 @@ namespace csharp
                     Items[i].Quality = Items[i].Quality - 1;
                 }
 
-                if (Items[i].Name != Sulfuras) // Decrease SellIn for anytying except Sulfuras
+                if (Items[i].Name == AgedBire) // Decrease SellIn for AgedBrie
+                {
+                    Items[i].SellIn = Items[i].SellIn - 1;
+                }
+
+                if (Items[i].Name == Backstage) // Decrease SellIn BackStage
+                {
+                    Items[i].SellIn = Items[i].SellIn - 1;
+                }
+
+
+                if (Items[i].Name != Backstage 
+                    && Items[i].Name != AgedBire 
+                    && Items[i].Name != Sulfuras) // Decrease SellIn for Normal
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
                 }
