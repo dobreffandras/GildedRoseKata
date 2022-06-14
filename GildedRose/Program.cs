@@ -27,10 +27,10 @@ foreach (var n in names)
 var gildedRose = new GildedRose.GildedRose(items);
 gildedRose.UpdateQuality();
 
-for (int i = 0; i < gildedRose.Items.Count; i++)
+for (int i = 0; i < items.Count; i++)
 {
     Item originalItem = originalItems[i];
-    Item? updatedItem = gildedRose.Items[i];
+    Item? updatedItem = items[i];
     Console.Write("new object[]{ ");
     Console.Write("new Item{ Name=\"" + originalItem.Name + "\", ");
     Console.Write("SellIn=" + originalItem.SellIn + ", ");

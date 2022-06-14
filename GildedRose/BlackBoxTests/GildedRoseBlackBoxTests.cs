@@ -11,14 +11,13 @@ namespace GildedRose.BlackBoxTests
     {
         [Theory]
         [MemberData(nameof(TestCases))]
-        public void BlackBoxTests(Item original, Item expected)
+        public void BlackBoxTests(Item item, Item expected)
         {
-            var g = new GildedRose(new List<Item> { original });
+            var g = new GildedRose(new List<Item> { item });
             g.UpdateQuality();
-            var updated = g.Items[0];
-            Assert.Equal(expected.Name, updated.Name);
-            Assert.Equal(expected.SellIn, updated.SellIn);
-            Assert.Equal(expected.Quality, updated.Quality);
+            Assert.Equal(expected.Name, item.Name);
+            Assert.Equal(expected.SellIn, item.SellIn);
+            Assert.Equal(expected.Quality, item.Quality);
         }
 
         public static IEnumerable<object[]> TestCases()
