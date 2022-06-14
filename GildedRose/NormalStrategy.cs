@@ -1,5 +1,5 @@
 ﻿using System;
-namespace csharp
+namespace GildedRose
 {
     internal class NormalStrategy : IQuantityUpdateStrategy
     {

@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace csharp
+namespace GildedRose
 {
     public class NormalStrategyTests : GildedRoseTest
     {

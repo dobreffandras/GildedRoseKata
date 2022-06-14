@@ -1,4 +1,4 @@
-﻿using csharp;
+﻿using GildedRose;
 
 var quantitites = new[] { -1, 0, 1, 49, 50, 51 };
 var sellins = new[] { -1, 0, 1, 5, 6, 7, 10, 11, 12 };
@@ -24,7 +24,7 @@ foreach (var n in names)
     }
 }
 
-var gildedRose = new csharp.GildedRose(items);
+var gildedRose = new GildedRose.GildedRose(items);
 gildedRose.UpdateQuality();
 
 for (int i = 0; i < gildedRose.Items.Count; i++)

@@ -1,4 +1,4 @@
-﻿using csharp;
+﻿using GildedRose;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace GildedRose
         [MemberData(nameof(TestCases))]
         public void BlackBoxTests(Item original, Item expected)
         {
-            var g = new csharp.GildedRose(new List<Item> { original });
+            var g = new GildedRose.GildedRose(new List<Item> { original });
             g.UpdateQuality();
             var updated = g.Items[0];
             Assert.Equal(expected.Name, updated.Name);

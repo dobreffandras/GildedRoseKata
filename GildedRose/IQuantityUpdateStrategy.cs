@@ -1,4 +1,4 @@
-﻿namespace csharp
+﻿namespace GildedRose
 {
     internal interface IQuantityUpdateStrategy
     {
