@@ -17,31 +17,15 @@ namespace csharp
         {
             foreach (Item item in Items)
             {
-                if (item.Name == AgedBire)
+                IQuantityUpdateStrategy strategy = item.Name switch
                 {
-                    var strategy = new AgedBrieStrategy();
-                    strategy.UpdateQuantity(item);
-                }
+                    AgedBire => new AgedBrieStrategy(),
+                    Backstage => new BackstageStrategy(),
+                    Sulfuras => new SulfurasStrategy(),
+                    _ => new NormalStrategy()
+                };
 
-                if (item.Name == Backstage)
-                {
-                    var strategy = new BackstageStrategy();
-                    strategy.UpdateQuantity(item);
-                }
-
-                if(item.Name == Sulfuras)
-                {
-                    var strategy = new SulfurasStrategy();
-                    strategy.UpdateQuantity(item);
-                }
-
-                if (item.Name != AgedBire
-                    && item.Name != Backstage
-                    && item.Name != Sulfuras) 
-                {
-                    var strategy = new NormalStrategy();
-                    strategy.UpdateQuantity(item);
-                }
+                strategy.UpdateQuantity(item);
             }
         }
     }
