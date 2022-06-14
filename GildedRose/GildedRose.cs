@@ -4,7 +4,7 @@ namespace csharp
 {
     public class GildedRose
     {
-        IList<Item> Items;
+        internal IList<Item> Items;
         public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
