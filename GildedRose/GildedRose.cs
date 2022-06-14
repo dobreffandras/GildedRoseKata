@@ -63,19 +63,20 @@ namespace csharp
 
                 if (Items[i].SellIn < 0)
                 {
-                    if (Items[i].Name != AgedBire)
+                    if (Items[i].Name != AgedBire && Items[i].Name != Backstage)
                     {
-                        if (Items[i].Name != Backstage)
+                        if (Items[i].Quality > 0)
                         {
-                            if (Items[i].Quality > 0)
+                            if (Items[i].Name != Sulfuras)
                             {
-                                if (Items[i].Name != Sulfuras)
-                                {
-                                    Items[i].Quality = Items[i].Quality - 1;
-                                }
+                                Items[i].Quality = Items[i].Quality - 1;
                             }
                         }
-                        else
+                    }
+
+                    if (Items[i].Name != AgedBire)
+                    {
+                        if(Items[i].Name == Backstage)
                         {
                             Items[i].Quality = Items[i].Quality - Items[i].Quality;
                         }
