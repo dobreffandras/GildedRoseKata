@@ -43,10 +43,6 @@ namespace csharp
                         }
                     }
                 }
-                else
-                {
-                    
-                }
 
                 if (Items[i].Name != AgedBire 
                     && Items[i].Name != Backstage
