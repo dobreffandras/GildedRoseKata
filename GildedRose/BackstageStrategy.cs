@@ -12,13 +12,13 @@ namespace csharp
         {
             if (item.Quality < 50)
             {
-                item.Quality = item.Quality + 1;
+                item.Quality++;
 
                 if (item.SellIn < 11)
                 {
                     if (item.Quality < 50)
                     {
-                        item.Quality = item.Quality + 1;
+                        item.Quality++;
                     }
                 }
 
@@ -26,12 +26,12 @@ namespace csharp
                 {
                     if (item.Quality < 50)
                     {
-                        item.Quality = item.Quality + 1;
+                        item.Quality++;
                     }
                 }
             }
 
-            item.SellIn = item.SellIn - 1;
+            item.SellIn--;
 
             if (item.SellIn < 0)
             {
