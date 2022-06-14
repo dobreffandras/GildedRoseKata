@@ -31,8 +31,13 @@ for (int i = 0; i < gildedRose.Items.Count; i++)
 {
     Item originalItem = originalItems[i];
     Item? updatedItem = gildedRose.Items[i];
-    Console.Write(originalItem);
-    Console.Write("  ->  ");
-    Console.Write(updatedItem);
+    Console.Write("new object[]{ ");
+    Console.Write("new Item{ Name=\"" + originalItem.Name + "\", ");
+    Console.Write("SellIn=" + originalItem.SellIn + ", ");
+    Console.Write("Quality=" + originalItem.Quality + "},");
+    Console.Write("new Item{ Name=\"" + updatedItem.Name + "\", ");
+    Console.Write("SellIn=" + updatedItem.SellIn + ", ");
+    Console.Write("Quality=" + updatedItem.Quality + "}");
+    Console.Write("},");
     Console.WriteLine();
 }
