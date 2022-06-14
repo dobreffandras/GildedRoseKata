@@ -2,21 +2,25 @@
 {
     internal class AgedBrieStrategy : IQuantityUpdateStrategy
     {
+        private const int QuantityCap = 50;
+
         public void UpdateQuantity(Item item)
         {
-            if (item.Quality < 50)
-            {
-                item.Quality++;
-            }
+            IncreaseQuantitiyByOneUpToCap(item);
 
             item.SellIn--;
 
             if (item.SellIn < 0)
             {
-                if (item.Quality < 50)
-                {
-                    item.Quality++;
-                }
+                IncreaseQuantitiyByOneUpToCap(item);
+            }
+        }
+
+        private static void IncreaseQuantitiyByOneUpToCap(Item item)
+        {
+            if (item.Quality < QuantityCap)
+            {
+                item.Quality++;
             }
         }
     }
