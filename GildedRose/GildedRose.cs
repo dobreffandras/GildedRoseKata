@@ -57,12 +57,14 @@ namespace csharp
                             }
                         }
                     }
-                    
-                }
 
-                if (Items[i].Name == Backstage) // Decrease SellIn BackStage
-                {
                     Items[i].SellIn = Items[i].SellIn - 1;
+
+                    if (Items[i].SellIn < 0)
+                    {
+                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                    }
+
                 }
 
 
@@ -82,15 +84,6 @@ namespace csharp
                         Items[i].Quality = Items[i].Quality - 1; // Decrease Quantity for normal case if sellIn is below zero
                     }
                 }
-
-                if (Items[i].Name == Backstage)
-                {
-                    if (Items[i].SellIn < 0)
-                    {
-                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
-                    }
-                }
-
             }
         }
     }
