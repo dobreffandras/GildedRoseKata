@@ -81,7 +81,8 @@ namespace csharp
                             Items[i].Quality = Items[i].Quality - Items[i].Quality;
                         }
                     }
-                    else
+                    
+                    if(Items[i].Name == AgedBire)
                     {
                         if (Items[i].Quality < 50)
                         {
