@@ -17,7 +17,34 @@ namespace csharp
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Name == AgedBire || Items[i].Name == Backstage)
+                if (Items[i].Name == AgedBire)
+                {
+                    if (Items[i].Quality < 50)
+                    {
+                        Items[i].Quality = Items[i].Quality + 1;
+
+                        if (Items[i].Name == Backstage)
+                        {
+                            if (Items[i].SellIn < 11)
+                            {
+                                if (Items[i].Quality < 50)
+                                {
+                                    Items[i].Quality = Items[i].Quality + 1;
+                                }
+                            }
+
+                            if (Items[i].SellIn < 6)
+                            {
+                                if (Items[i].Quality < 50)
+                                {
+                                    Items[i].Quality = Items[i].Quality + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (Items[i].Name == Backstage)
                 {
                     if (Items[i].Quality < 50)
                     {
