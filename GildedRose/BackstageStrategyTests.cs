@@ -41,7 +41,7 @@ namespace csharp
         }
 
         [Theory]
-        [InlineData(5, 48)] // This case fails
+        [InlineData(5, 48)]
         [InlineData(7, 49)]
         [InlineData(11, 50)]
         [InlineData(12, 50)]
