@@ -10,14 +10,16 @@ var names = new[] {
 };
 
 
+var originalItems = new List<Item>();
 var items = new List<Item>();
-foreach(var n in names)
+foreach (var n in names)
 {
     foreach(var s in sellins)
     {
         foreach(var q in quantitites)
         {
-            items.Add(new Item { Name = n, SellIn = s, Quality = q });
+            originalItems.Add(new Item { Name = n, SellIn = s, Quality = q }); 
+            items.Add(new Item { Name = n, SellIn = s, Quality = q }); // create a separate instance purposely because its mutable
         }
     }
 }
@@ -25,7 +27,12 @@ foreach(var n in names)
 var gildedRose = new csharp.GildedRose(items);
 gildedRose.UpdateQuality();
 
-foreach(var item in gildedRose.Items)
+for (int i = 0; i < gildedRose.Items.Count; i++)
 {
-    Console.WriteLine(item);
+    Item originalItem = originalItems[i];
+    Item? updatedItem = gildedRose.Items[i];
+    Console.Write(originalItem);
+    Console.Write("  ->  ");
+    Console.Write(updatedItem);
+    Console.WriteLine();
 }
