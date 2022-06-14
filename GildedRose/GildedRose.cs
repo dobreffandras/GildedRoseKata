@@ -62,7 +62,7 @@ namespace csharp
 
                     if (Items[i].SellIn < 0)
                     {
-                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                        Items[i].Quality = 0;
                     }
 
                 }
